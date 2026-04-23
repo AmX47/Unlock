@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OmniDecrypt | Advanced Data Deciphering</title>
+    <meta name="description" content="Securely decrypt and decipher data using our high-performance quantum engine.">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&family=Outfit:wght@400;600;700&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="particles" id="particles"></div>
+
+    <div class="container">
+        <main class="decryption-card">
+            <div class="header">
+                <div class="logo">
+                    <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+                        <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+                        <path d="M12 15v3"></path>
+                    </svg>
+                </div>
+                <h1>DecryptData</h1>
+                <p>Enter encrypted sequence for terminal processing</p>
+            </div>
+
+            <div class="input-wrapper">
+                <input type="text" id="data-input" autocomplete="off" placeholder="Paste ciphered text here..."
+                    autofocus>
+                <button id="decrypt-btn">Decrypt Sequence</button>
+            </div>
+
+            <div class="status-area">
+                <div id="result-text" class="result-message">
+                    The encryption has been deciphered, so now you can use it freely.
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
